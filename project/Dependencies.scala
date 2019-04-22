@@ -11,7 +11,7 @@ object Dependencies {
   val udashJQueryVersion = "3.0.1"
 
   // Backend
-  val finagleVersion = "19.2.0"
+  val twitterVersion = "19.2.0"
   val logbackVersion = "1.2.3"
 
   // JS dependencies
@@ -25,10 +25,11 @@ object Dependencies {
   // Dependencies for both frontend and backend
   // Those have to be cross-compilable
   val crossDeps = Def.setting(Seq(
-    "io.udash" %%% "udash-core" % udashVersion,
-    "io.udash" %%% "udash-rest" % udashVersion,
-    "io.udash" %%% "udash-css" % udashVersion,
-    "io.udash" %%% "udash-auth" % udashVersion,
+    "io.udash"    %%% "udash-core" % udashVersion,
+    "io.udash"    %%% "udash-rest" % udashVersion,
+    "io.udash"    %%% "udash-css"  % udashVersion,
+    "io.udash"    %%% "udash-auth" % udashVersion,
+    "com.twitter" %%  "util-core"  % twitterVersion,
   ))
 
   // Dependencies compiled to JavaScript code
@@ -74,7 +75,7 @@ object Dependencies {
     "io.udash" %% "udash-i18n" % udashVersion,
     "io.udash" %% "udash-css" % udashVersion,
 
-    "com.twitter" %% "finatra-http" % finagleVersion,
+    "com.twitter" %% "finatra-http" % twitterVersion,
     "ch.qos.logback" % "logback-classic" % logbackVersion,
   ))
 

@@ -1,6 +1,6 @@
 package org.codeape.timepool.shared.model.auth
 
-import com.avsystem.commons.serialization.HasGenCodec
+import io.udash.rest.RestDataCompanion
 
 /** User identification token. Passed with the RPC requests. */
 case class UserToken(
@@ -10,5 +10,5 @@ case class UserToken(
   permission: Permission,
   sig: String
 )
-object UserToken extends HasGenCodec[UserToken]
+object UserToken extends RestDataCompanion[UserToken]
 

@@ -12,7 +12,7 @@ import scala.annotation.implicitNotFound
 
 trait TwitterRestImplicits extends GenCodecRestImplicits {
 
-  implicit def futureToAsyn(): AsyncEffect[Future] = new AsyncEffect[Future] {
+  implicit def futureToAsync: AsyncEffect[Future] = new AsyncEffect[Future] {
     def toAsync[A](future: Future[A]): Async[A] =
       callback => future.respond {
         case Return(value) => callback(Success(value))
